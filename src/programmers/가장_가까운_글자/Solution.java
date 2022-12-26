@@ -1,4 +1,4 @@
-package programmers.가장가까운글자;
+package programmers.가장_가까운_글자;
 
 import java.util.Scanner;
 

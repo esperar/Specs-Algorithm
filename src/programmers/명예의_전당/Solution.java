@@ -1,4 +1,4 @@
-package programmers.명예의전당;
+package programmers.명예의_전당;
 
 import java.util.ArrayList;
 import java.util.Collections;
