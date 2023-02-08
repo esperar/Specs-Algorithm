@@ -9,7 +9,7 @@ public class Main {
         String[] arr1 = input.split("-");
         int[] plusArr = new int[arr1.length];
         int answer = 0;
-        // 더하기 연산 처리
+
         for (int i = 0; i < arr1.length; i++) {
 
             int count = 0;
@@ -21,7 +21,7 @@ public class Main {
             plusArr[i] = count;
         }
         answer = plusArr[0];
-        // 더한 연산끼리 빼주기
+
         for (int i = 1; i < arr1.length; i++) {
             answer -= plusArr[i];
         }
