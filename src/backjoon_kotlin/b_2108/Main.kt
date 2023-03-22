@@ -13,7 +13,6 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))){
         arr.add(readLine().toInt())
     }
 
-
     arr.sort()
     // -1 -1 -2 -2 -3
     val average = (arr.sum() / N.toDouble()).roundToInt()
