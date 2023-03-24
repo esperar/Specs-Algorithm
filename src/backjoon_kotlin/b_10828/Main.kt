@@ -4,7 +4,6 @@ import java.util.*
 
 fun main() {
     val stack = Stack<Int>()
-
     val n = readLine()!!.toInt()
     repeat(n) {
         val command = readLine()!!.split(" ")
