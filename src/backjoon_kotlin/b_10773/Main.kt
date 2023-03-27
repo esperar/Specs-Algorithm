@@ -9,7 +9,7 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))){
     val K = readLine()!!.toInt()
     val stack = Stack<Int>()
     repeat(K){
-        var input = readLine().toInt()
+        val input = readLine().toInt()
         if(input == 0){
             stack.pop()
         } else {
