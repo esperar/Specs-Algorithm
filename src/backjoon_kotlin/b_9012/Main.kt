@@ -15,19 +15,16 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
 }
 
 fun isVPS(input: String): Boolean{
-    var openCount = 0
     val stack = Stack<Char>()
 
     for (data in input) {
         if (data == '(') {
             stack.push(data)
-            openCount++
         } else if (data == ')') {
             if (stack.isEmpty()) {
                 return false
             } else {
                 stack.pop()
-                openCount--
             }
         }
     }
