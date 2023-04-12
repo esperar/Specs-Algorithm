@@ -29,10 +29,26 @@ class NodeMgmt(var head: Node) {
         }
     }
 
+    fun search(value: Int): Boolean {
+        var currentNode: Node? = head
+        while (true) {
+            if (currentNode!!.value == value) {
+                return true
+            } else if (value < currentNode.value) {
+                currentNode = currentNode.left
+            } else {
+                currentNode = currentNode.right
+            }
+        }
+        return false
+    }
 }
 
 fun main() {
     val head = Node(1)
     val BST = NodeMgmt(head)
     BST.insert(2)
+    BST.insert(3)
+    BST.insert(0)
+    println(BST.search(2))
 }
