@@ -42,6 +42,51 @@ class NodeMgmt(var head: Node) {
         }
         return false
     }
+
+    fun delete(value: Int): Boolean{
+        var searched = false
+        var currentNode: Node? = head
+        var parentNode: Node? = head
+
+        while(currentNode != null){
+            if(currentNode?.value == value){
+                searched = true
+                break
+            } else if(value < currentNode.value){
+                parentNode = currentNode
+                currentNode = currentNode.left
+            } else {
+                parentNode = currentNode
+                currentNode = currentNode.right
+            }
+        }
+
+        if(!searched) return false
+
+        if(currentNode?.left == null && currentNode?.right == null){
+            if(value < parentNode!!.value){
+                parentNode.left = null
+            } else {
+                parentNode.right = null
+            }
+        }
+
+        if(currentNode?.left != null && currentNode?.right == null){
+            if(value < currentNode.value){
+                parentNode?.left =  currentNode?.left
+            } else {
+                parentNode?.right = currentNode?.left
+            }
+        } else if(currentNode?.left == null && currentNode?.right != null){
+            if(value < currentNode.value){
+                parentNode?.left = currentNode?.right
+            } else {
+                parentNode?.right = currentNode?.right
+            }
+        }
+
+        return true
+    }
 }
 
 fun main() {
