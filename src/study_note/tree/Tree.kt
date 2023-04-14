@@ -85,6 +85,44 @@ class NodeMgmt(var head: Node) {
             }
         }
 
+        if(currentNode?.left != null && currentNode?.right != null){
+            if(value < parentNode!!.value){
+                var changeNode = currentNode.right
+                var changeNodeParent = currentNode.right
+
+                while(changeNode?.left != null){
+                    changeNodeParent = changeNode
+                    changeNode = changeNode.left
+                }
+
+                if(changeNode?.right != null)
+                    changeNodeParent?.left = changeNode?.right
+                else
+                    changeNodeParent?.left = null
+
+                parentNode.left = changeNode
+                changeNode?.right = currentNode.right
+                changeNode?.left = currentNode.left
+            }
+        } else {
+            var changeNode = currentNode?.right
+            var changeNodeParent = currentNode?.right
+            while (changeNode?.left != null){
+                changeNodeParent = changeNode
+                changeNode = changeNode.left
+            }
+
+            if(changeNode?.right != null) {
+                changeNodeParent?.left = changeNode?.right
+            } else {
+                changeNodeParent?.left = null
+            }
+
+            parentNode?.left = changeNode
+            changeNode?.right = currentNode?.left
+            changeNode?.right = currentNode?.right
+        }
+
         return true
     }
 }
