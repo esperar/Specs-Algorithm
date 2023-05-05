@@ -17,4 +17,4 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))){
     }
 
     print(pot.copyOfRange(1, pot.size).joinToString(" "))
-} 
+}
