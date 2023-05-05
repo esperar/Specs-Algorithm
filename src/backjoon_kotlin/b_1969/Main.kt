@@ -1,45 +1,37 @@
 package backjoon_kotlin.b_1969
 
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.lang.StringBuilder
+fun main() = with(System.`in`.bufferedReader()) {
+    val (N, M) = readLine().split(" ").map { it.toInt() }
+    val dna = Array(N) { readLine() }
 
-fun main() = with(BufferedReader(InputStreamReader(System.`in`))){
-    val (n, m) = readLine().split(" ").map { it.toInt() }
-    val input = mutableListOf<List<Char>>()
-    var result = ""
     var count = 0
+    var result = ""
 
-    repeat(n){
-        input.add(readLine().toList())
-    }
-
-
-    for(i in 0 until m){
-        val ATGC = IntArray(4) { 0 }
-        for(j in 0 until n){
-            when(input[j][i]){
-                'A' -> ATGC[0]++
-                'T' -> ATGC[1]++
-                'G' -> ATGC[2]++
-                else -> ATGC[3]++
+    for (i in 0 until M) {
+        val acgt = IntArray(4) { 0 }
+        for (j in 0 until N) {
+            when (dna[j][i]) {
+                'A' -> acgt[0]++
+                'C' -> acgt[1]++
+                'G' -> acgt[2]++
+                else -> acgt[3]++
             }
         }
 
-        val max = ATGC.max()
-        val maxIndex = ATGC.indexOf(max)
+        val max = acgt.maxOf { it }
+        val index = acgt.indexOf(max)
 
-        result += when(maxIndex){
+        result += when (index) {
             0 -> 'A'
-            1 -> 'T'
+            1 -> 'C'
             2 -> 'G'
-            else -> 'C'
+            else -> 'T'
         }
     }
 
-    for (i in 0 until n) {
-        for (j in 0 until m) {
-            if (result[j] != input[i][j]) {
+    for (i in 0 until N) {
+        for (j in 0 until M) {
+            if (result[j] != dna[i][j]) {
                 count++
             }
         }
