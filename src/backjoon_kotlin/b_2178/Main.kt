@@ -39,10 +39,8 @@ fun bfs(x: Int, y: Int){
             val nx = node.x + dx[i]
             val ny = node.y + dy[i]
 
-            if(nx < 0 || ny < 0 || nx >= n || ny >= m)
-                continue
-            if(visited[nx][ny] || arr[nx][ny] == 0)
-                continue
+            if(nx < 0 || ny < 0 || nx >= n || ny >= m) continue
+            if(visited[nx][ny] || arr[nx][ny] == 0) continue
 
             queue.offer(Node(nx, ny))
             arr[nx][ny] = arr[node.x][node.y] + 1
