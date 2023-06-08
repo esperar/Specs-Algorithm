@@ -33,14 +33,13 @@ fun main() = with(System.`in`.bufferedReader()){
 }
 
 fun bfs(start: Int){
-    var temp = start
     val queue: Queue<Int> = LinkedList()
     queue.offer(start)
     visited[start] = true
 
     while(queue.isNotEmpty()){
         for(i in 1 .. queue.size){
-            temp = queue.poll()
+            val temp = queue.poll()
             if(family2 == temp)
                 return println(result)
 
