@@ -48,7 +48,7 @@ fun bfs(start: Int){
                     queue.offer(j)
                     visited[j] = true
                 }
-            }
+            } 
         }
         result++
     }
