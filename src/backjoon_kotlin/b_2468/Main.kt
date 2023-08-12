@@ -1,7 +1,5 @@
 package backjoon_kotlin.b_2468
 
-import java.util.*
-
 var n = 0
 
 private lateinit var graph: Array<IntArray>
