@@ -46,7 +46,6 @@ fun dijkstra() {
 
     dijkstraSearch(start) // 탐색 수행
 
-
     distance.drop(1).forEach { d ->
         if (d == Int.MAX_VALUE) println("INFINITY") else println(d)
     }
