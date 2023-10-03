@@ -7,7 +7,6 @@ var n = 0
 var m = 0
 private lateinit var edge: Array<ArrayList<Int>>
 private lateinit var visited: BooleanArray
-var result = 0
 
 var min = Integer.MAX_VALUE
 var minUser = 0
@@ -17,7 +16,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     n = input[0]
     m = input[1]
 
-    edge = Array(n + 1) { ArrayList<Int>() }
+    edge = Array(n + 1) { ArrayList() }
     visited = BooleanArray(n + 1)
 
     for(i in 0 until m) {
