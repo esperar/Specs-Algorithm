@@ -32,12 +32,12 @@ fun main() = with(System.`in`.bufferedReader()) {
 
     while(queue.isNotEmpty()) {
         val target = queue.poll()
-        for(i in 0 until 6) {
+        for (i in 0 until 6) {
             val nx = target.x + dx[i]
             val ny = target.y + dy[i]
 
-            if(nx !in 0 until n || ny !in 0 until n || visited[ny][nx]) continue
-            if(ny == r2 && nx == c2) {
+            if (nx !in 0 until n || ny !in 0 until n || visited[ny][nx]) continue
+            if (ny == r2 && nx == c2) {
                 println(target.moveCount + 1)
                 return
             }
@@ -48,6 +48,5 @@ fun main() = with(System.`in`.bufferedReader()) {
     }
 
     println(-1)
-
 }
 
