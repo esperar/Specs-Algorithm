@@ -8,7 +8,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     val sb = StringBuilder()
 
     for(i in 0 until n) {
-        val (name, extension) = readLine().split(".")
+        val extension = readLine().split(".")[1]
         map[extension] = map[extension]?.plus(1) ?: 1
     }
 
