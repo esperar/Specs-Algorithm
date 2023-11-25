@@ -45,7 +45,7 @@ public class Main {
         }
         for (int i = 1; i <= n; i++) {
             if (result[i] == max)
-                sb.append(i+" ");
+                sb.append(i + " ");
         }
 
         System.out.println(sb);
@@ -66,8 +66,8 @@ public class Main {
                     count++;
                 }
             }
-
         }
+
     }
 
 
