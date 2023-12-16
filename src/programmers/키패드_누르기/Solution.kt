@@ -1,12 +1,13 @@
 package programmers.키패드_누르기
 
-
 class Solution {
     var left: Position? = null
     var right: Position? = null
     var numPos: Position? = null
 
     fun solution(numbers: IntArray, hand: String): String {
+
+
         var answer = ""
         left = Position(3, 0)
         right = Position(3, 2)

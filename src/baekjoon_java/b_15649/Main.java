@@ -19,22 +19,22 @@ public class Main {
     }
 
     public static void dfs(int N, int M, int depth) {
-        if(depth == M) {
-            for(int value : arr) {
+        if (depth == M) {
+            for (int value : arr) {
                 System.out.print(value + " ");
             }
             System.out.println();
             return;
         }
 
-        for(int i = 0; i < N; i++) {
-            if(!visited[i]) {
+        for (int i = 0; i < N; i++) {
+            if (!visited[i]) {
                 visited[i] = true;
                 arr[depth] = i + 1;
                 dfs(N, M, depth + 1);
                 visited[i] = false;
             }
         }
-        return;
+        ;
     }
 }
