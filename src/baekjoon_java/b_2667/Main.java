@@ -9,8 +9,8 @@ public class Main {
 
     static int[][] danji;
     static boolean[][] visited;
-    static int[] dx = {0,0,-1,1};
-    static int[] dy = {-1,1,0,0};
+    static int[] dx = {0, 0, -1, 1};
+    static int[] dy = {-1, 1, 0, 0};
     static List<Integer> result;
     static int cnt, N;
 
