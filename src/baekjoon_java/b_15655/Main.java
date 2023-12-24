@@ -13,7 +13,6 @@ public class Main {
 
     static int[] arr;
     static int[] input;
-    static boolean[] visited;
 
     static StringBuilder sb = new StringBuilder();
 
@@ -27,7 +26,6 @@ public class Main {
 
         arr = new int[m];
         input = new int[n];
-        visited = new boolean[n];
 
         token = new StringTokenizer(br.readLine());
 
