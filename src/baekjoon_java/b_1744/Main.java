@@ -26,7 +26,7 @@ public class Main {
 
         int i = 0;
         while(i < p.size()) {
-            if(i + 1 < p.size() && p.get(i) != 1) {
+            if(i + 1 < p.size() && p.get(i) != 1 && p.get(i + 1) != 1) {
                 sum += p.get(i++) * p.get(i++);
             } else {
                 sum += p.get(i++);
