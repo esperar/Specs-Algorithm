@@ -37,12 +37,12 @@ public class Main {
     static void dfs(int count, int index) {
         if(count == m) {
             int total = 0;
-            for(int i = 0; i < house.size(); i++) {
+            for (Node node : house) {
                 int sum = Integer.MAX_VALUE;
-                for(int j = 0; j < chicken.size(); j++) {
-                    if(chickenVisited[j]) {
-                        int distance = Math.abs(house.get(i).x - chicken.get(j).x)
-                                + Math.abs(house.get(i).y - chicken.get(j).y);
+                for (int j = 0; j < chicken.size(); j++) {
+                    if (chickenVisited[j]) {
+                        int distance = Math.abs(node.x - chicken.get(j).x)
+                                + Math.abs(node.y - chicken.get(j).y);
                         sum = Math.min(sum, distance);
                     }
                 }
