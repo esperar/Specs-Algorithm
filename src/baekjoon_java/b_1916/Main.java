@@ -52,7 +52,6 @@ public class Main {
             for(int i = 0; i < list[now.end].size(); i++) {
                 Node next = list[now.end].get(i);
 
-
                 if(!visited[next.end] && next.weight + now.weight < result[next.end]) {
                     result[next.end] = next.weight + now.weight;
                     queue.add(new Node(next.end, result[next.end]));
