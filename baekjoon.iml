@@ -18,4 +18,7 @@
     </orderEntry>
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="37e2ab27-9e65-4c20-80fa-3b3d27a9fe5b" />
+  </component>
 </module>
