@@ -1,6 +1,5 @@
 package baekjoon_java.b_2512;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -9,21 +8,29 @@ public class Main {
         int n = sc.nextInt();
         int[] input = new int[n];
 
-        int inputSum = 0;
+        int left = 0;
+        int right = -1;
         for(int i = 0; i < n; i++) {
             input[i] = sc.nextInt();
-            inputSum += input[i];
+            right = Math.max(right, input[i]);
         }
 
-        int maxCost = sc.nextInt();
+        int m = sc.nextInt();
 
-        // 상한값을 넣어야하는뎅
+        while(left <= right) {
+            int mid = (left + right) / 2;
+            int cost = 0;
+            for(int i = 0; i < n; i++) {
+                cost += Math.min(input[i], mid);
+            }
 
-        if(maxCost >= inputSum) {
-            System.out.println(Arrays.stream(input).max());
-            return;
+            if(cost <= m){
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
         }
 
-
+        System.out.println(right);
     }
 }
