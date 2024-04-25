@@ -16,7 +16,7 @@ public class Main {
         } else if(m < 7) {
             answer = Math.min(4, m);
         } else {
-            answer = (2 + (m - 5)) + 1;
+            answer = m - 2;
         }
 
         System.out.println(answer);
