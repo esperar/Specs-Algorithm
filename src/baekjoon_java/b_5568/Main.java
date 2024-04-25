@@ -21,8 +21,7 @@ public class Main {
         for(int i = 0; i < n; i++) {
             cards[i] = sc.nextInt();
         }
-        // 그냥 set을 만들고 depth가 K일때까지 반복해서 k면 만든숫자 셋에 저장하고
-        // 백트래킹으로 마짐가에 SET size 출력
+
         dfs("", 0);
         System.out.println(set.size());
     }
