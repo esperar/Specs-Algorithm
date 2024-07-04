@@ -59,8 +59,7 @@ class Solution {
     }
 
     public boolean isInRange(int x, int y) {
-        if(0 <= x && x < n && 0 <= y && y < m) return true;
-        return false;
+        return 0 <= x && x < n && 0 <= y && y < m;
     }
 
     static class Node {
