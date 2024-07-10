@@ -29,6 +29,7 @@ public class Main {
                 result += 2 * dp(n - i);
             }
         }
+        dp[n] = result;
         return result;
     }
 
