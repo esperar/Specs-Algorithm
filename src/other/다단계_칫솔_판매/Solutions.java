@@ -2,7 +2,7 @@ package other.다단계_칫솔_판매;
 
 import java.util.*;
 
-class Solution {
+class Solutions {
     public int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
 
         HashMap<String, String> parent = new HashMap<>();
