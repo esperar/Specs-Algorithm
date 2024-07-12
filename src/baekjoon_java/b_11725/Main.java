@@ -1,54 +1,44 @@
 package baekjoon_java.b_11725;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
 
-    static boolean visited[];
-    static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-    static int[] parents;
+    static ArrayList<ArrayList<Integer>> tree;
+    static boolean[] visited;
+    static int[] parent;
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        int n = Integer.parseInt(br.readLine());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        tree = new ArrayList<>();
         visited = new boolean[n + 1];
-        parents = new int[n];
-
-        for(int i = 0; i < n + 1; i++) {
-            graph.add(new ArrayList<>());
+        parent = new int[n + 1];
+        for(int i = 0; i <= n; i++) {
+            tree.add(new ArrayList<>());
         }
 
         for(int i = 0; i < n - 1; i++) {
-            StringTokenizer token = new StringTokenizer(br.readLine());
-
-            int a = Integer.parseInt(token.nextToken());
-            int b = Integer.parseInt(token.nextToken());
-
-            graph.get(a).add(b);
-            graph.get(b).add(a);
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            tree.get(a).add(b);
+            tree.get(b).add(a);
         }
-
         dfs(1);
-
-        for(int i = 1; i < parents.length; i++) {
-            sb.append(parents[i] + "\n");
+        for(int i = 2; i < parent.length; i++) {
+            System.out.println(parent[i]);
         }
-
-        System.out.println(sb);
     }
 
     static void dfs(int v) {
         visited[v] = true;
-        for(int i : graph.get(v)) {
-            if(!visited[i]) {
-                parents[i - 1] = v;
-                dfs(i);
+        for(int next : tree.get(v)) {
+            if(!visited[next]) {
+                parent[next] = v;
+                dfs(next);
             }
         }
     }
+
 }
