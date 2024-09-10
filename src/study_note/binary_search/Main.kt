@@ -6,7 +6,7 @@ fun main() {
 }
 
 fun IntArray.binarySearch(value: Int): Int {
-    var start = 0;
+    var start = 0
     var last = this.lastIndex
     val mid = (start + last) / 2
     while(start <= last) {
