@@ -13,7 +13,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     println(answer)
 }
 
-private fun isPallin(s: String): Boolean {
+private fun isPalind(s: String): Boolean {
     var start = 0
     var end = s.length - 1
     while(start <= end) {
