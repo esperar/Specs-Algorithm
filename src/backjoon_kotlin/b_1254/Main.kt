@@ -5,7 +5,7 @@ fun main() = with(System.`in`.bufferedReader()) {
     var answer = s.length
 
     for(i in s.indices) {
-        if(isPallin(s.substring(i))) {
+        if(isPalind(s.substring(i))) {
             break
         }
         answer++
